@@ -1,0 +1,59 @@
+import PySimpleGUI as sg
+layout = [[sg.Text("Welcome to your amazon cart:", text_color = "black", font = "courier 30", background_color = 'white')] , [sg.Button("cart")]]
+# Create the window
+window = sg.Window('amazon', layout  )
+
+# Create an event loop
+while True:
+    event, values = window.read()
+    # End program if user closes window or
+    # presses the OK button
+    if event == "cart" or event == sg.WIN_CLOSED:
+        break
+
+# cart
+teen_age = "18 below"
+adult_age = "18 above"
+
+right_age = adult_age
+age = input("what is your age ?")
+
+if(age == right_age):
+  note_ = "Go to adult section"
+else:
+  note_ = "Go To TeEn SEction"
+print(note_)     
+username= input("what is your user name?")
+password = input("what is your password?")
+password_len = input (len( password))
+shopping_cart = ['tshirts','powerbank','jeans']
+hidden_password = "$" * len(password)
+print(f"{username} Welcome to Amazon your cart has {shopping_cart[::]} your amazon password of length {len(password)} is {hidden_password}")
+if (password == username):
+  st = "nice to meet you "
+else:
+    st = "welcome to your cart"
+print(st)
+tshirt_bill = 2300
+jeans_bill = 1200
+bills = tshirt_bill + jeans_bill
+print(f"{bills} total amount to be paid")
+best_shopping = ['amazon', 'powerbank', 'jeans']
+this_ = best_shopping[0] 
+a_n = input("what is best shopping site?")
+if (a_n == this_):
+ bill = username   +  "  you are near bonus"
+else:
+   bill = username   + "  Better luck next time"
+print(bill)
+payment = input(" Quiz who is the owner of amazon ?")
+owner = ["jeff bezoz", "elon musk"]
+owner2 =  owner[0]
+if (payment == owner2):
+  st = username  +  "  you won Rupees 3500 shopping vouchers"
+else:
+   st =  username  +  "  Better luck next time"
+print(st)
+print("THANKS FOR YOUR TIME")
+window.close()
+
